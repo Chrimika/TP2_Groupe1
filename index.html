@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.10/css/weather-icons.min.css">
+    <title>Acceuil</title>
+    <style>
+      body{
+        margin: 0;
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        background-image: url("img/body_bg.png");
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+      }
+      h1{
+        font-size: 80px;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        text-align: center;
+        color: #141D26;
+        margin-top: -15px;
+      }
+      .sub_topic{
+        text-align: center;
+        letter-spacing: 4px;
+        margin-top: -55px;
+        border-bottom: 1px solid #C51F5D;
+      }
+      i{
+        color: #C51F5D;
+
+      }
+      .core{
+        padding: 20px;
+        border: 1px solid black;
+        width: 500px;
+        margin-top: 30px;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+      }
+      form{
+
+        text-align: center;
+      }
+       input{
+        height: 30px;
+        text-align: center;
+        border: none;
+        background-color: #C0C0C0;
+        border-radius: 4px;
+        margin-right: 5px;
+        outline: none;
+      } 
+      .core_align{
+        display: flex;
+        padding: 5px;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      }
+      /* .div1{
+        margin: 0 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      } */
+      /* label{
+        font-size: 30px;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      } */
+      button{
+        border-radius: 4px;
+        width: 100px;
+        background-color: #08415C;
+        height: 35px;
+        border: none;
+        margin-top: 25px;
+        color: white;
+        letter-spacing: 4px;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-size: 15px;
+      }
+      #nombre{
+        font-size: 40px;
+        font-family: Arial, Helvetica, sans-serif;
+        color: red;
+        text-align: center;
+        font-weight: bold;
+
+      }
+    input[type="number"] {
+    -moz-appearance: textfield; /* Pour Firefox */
+    appearance: textfield; /* Pour la plupart des autres navigateurs */
+}
+    </style>
+</head>
+<body>
+    <h1>GROUPE 1</h1>
+    <p class="sub_topic"> <i>Lecture de la pensé</i> </p>
+
+    <div class="core">
+        <div class="core_align">
+            <div>
+                <p>Divisez par 2</p>
+            </div>
+            <div>
+                <p>Ajoutez 6</p>
+            </div>
+            <div>
+                <p>Ajoutez 15</p>
+            </div>
+            <div>
+                <p>Multipliez par 3</p>
+            </div>
+            <div>
+                <p>soustrayez 10</p>
+            </div>
+            <div>
+                <p>Divisez par 100</p>
+            </div>
+            <div>
+                <p>soustrayez 5</p>
+            </div>
+            <div>
+                <p>Multipliez par 10</p>
+            </div>
+            <form id="equationForm">
+                Resultat obtenu :
+                <input type="number" placeholder="Resultat" id="result">
+                <button type="button" onclick="devinage()">Deviner</button>
+            </form>
+            <div>
+                <p>Nombre Initiale</p>
+                <p id="nombre"></p>
+            </div>
+        </div>
+       
+        
+    </div>
+    
+
+    <script src="Js/app.js"></script>
+  </body>
+</html>
