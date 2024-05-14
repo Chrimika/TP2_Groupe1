@@ -82,7 +82,7 @@ function LireDansLeFutur() {
     output.innerHTML += "Le resultat est " + result.resultat;
 }
 
-var result = { valeursDeB: [], valeursOperations: [] };
+var result1 = { valeursDeB: [], valeursOperations: [] };
 function LireDansLaPensee() {
     var i = 0;
     var a = genererEntier();
@@ -98,8 +98,8 @@ function LireDansLaPensee() {
         operation = Operation(a, b, operateur);
         output.innerHTML += operation[0] + "<br>";
         a = operation[1];
-        result.valeursDeB[i] = b;
-        result.valeursOperations[i] = operateur;
+        result1.valeursDeB[i] = b;
+        result1.valeursOperations[i] = operateur;
         i++;
     }
 }
@@ -108,8 +108,8 @@ function getValue() {
     var x = parseInt(document.getElementById('resultatFinal').value);
     var nombreDepart = document.getElementById("nombreDepart");
 
-    for (var j = result.valeursDeB.length - 1; j >= 0; j--) {
-        var operationInv = OperationInverse(x, result.valeursDeB[j], result.valeursOperations[j]);
+    for (var j = result1.valeursDeB.length - 1; j >= 0; j--) {
+        var operationInv = OperationInverse(x, result1.valeursDeB[j], result1.valeursOperations[j]);
         x = operationInv[1];
 
     }
