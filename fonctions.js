@@ -1,6 +1,6 @@
-//Generer un nombre aleatoire entre 0 et 10
+//Generer un nombre aleatoire entre 1 et 10
 function genererEntier() {
-    return Math.floor(Math.random() * 11);
+    return Math.floor(Math.random() * 10)+1;
 }
 //Generer un operateur
 function genererOperateur() {
@@ -23,7 +23,7 @@ function Operation(a, b, operator) {
             }
             return ["Multipliez par ".concat(b), a * b];
         case "/":
-            while (b == 0 || a % b != 0) {
+            while (a % b != 0) {
                 b = genererEntier();
             }
             return ["Divisez par ".concat(b), a / b];
