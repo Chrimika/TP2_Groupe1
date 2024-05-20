@@ -1,19 +1,54 @@
-function predictions() {
-  var nbr :number = document.getElementById("result").value;
-  const result :number = ((((((((nbr/10)+5)*100)+10)/3)-15)-6)*2);
-  var initialNumber: number = Math.floor(result);
-  const decimalPart: number = result - initialNumber;
-  if (decimalPart >= 0.5) {
-    initialNumber += 1;
+function genererTableau(): number[] {
+  const taille = Math.floor(Math.random() * (8 - 4 + 1)) + 4;
+  const tableau: number[] = [];
+
+  for (let i = 0; i < taille; i++) {
+      const nombreAleatoire = Math.floor(Math.random() * 10) + 1;
+      tableau.push(nombreAleatoire);
   }
-  const paragraphe = document.getElementById("nombre");
-  paragraphe.textContent = initialNumber.toString();
+
+  return tableau;
 }
-function prediction() {
-  let result = document.getElementById("result").value;;
-  result = (result + 5) * 2;
-  result = (result - 4) * 2;
-  result = (result * 3) / 2;
-  result = (result / 2) + 4;
-  
+
+function remplirTableauOp(taille: number): string[] {
+  const caracteres = ['/', '-', '+', '*'];
+  const tableau: string[] = [];
+
+  for (let i = 0; i < taille; i++) {
+      const caractereAleatoire = caracteres[Math.floor(Math.random() * caracteres.length)];
+      tableau.push(caractereAleatoire);
+  }
+
+  return tableau;
 }
+
+const divParente = document.getElementById("afficher");
+
+const opperand = genererTableau();
+const opperation = remplirTableauOp(opperand.length-1);
+
+for (let i = 0; i < opperand.length; i++) {
+  const nouvelleDiv = document.createElement("div");
+  var opp = opperation[i];
+  var statement;
+  switch(opp){
+    case "*":
+      statement = "Multipliez par";
+      break;
+    case "-":
+      statement = "Soustrayez ";
+      break;
+    case "+":
+      statement = "Ajoutez ";
+      break;
+    case "/":
+      statement = "Divisez par";
+      break;
+  } 
+  nouvelleDiv.textContent = statement+` `+opperand[i];
+
+  // Ajout de la nouvelle div à la div parente
+  divParente.appendChild(nouvelleDiv);
+}
+
+
